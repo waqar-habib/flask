@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from os import path
 
 # define new db. This is a database object
 db = SQLAlchemy()
@@ -23,5 +24,13 @@ def create_app():
     # doing this to access routes
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+
+    # defines class User and Notes to create db. Mind the relative import strategy
+    from .models import User, Note
+
     return app
+
+def create_database(app):
+    if not path.exists('flask/' + DB_NAME):
+        print('Database created!')
 
