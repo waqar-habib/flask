@@ -28,9 +28,15 @@ def create_app():
     # defines class User and Notes to create db. Mind the relative import strategy
     from .models import User, Note
 
+    # initialize function
+    create_database(app)
+    
     return app
 
 def create_database(app):
     if not path.exists('flask/' + DB_NAME):
+        db.create_all(app=app)
         print('Database created!')
+
+
 
