@@ -2,203 +2,198 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
 content %}
 
-<div class="container-fluid">
-  <div class="row">
-    <!--Nav is on base.html-->
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="jumbotron">
-        <h2 style="margin-top:50px;">Hello, world!</h2>
-        <p>
-          This is a template for a simple marketing or informational website. It
-          includes a large callout called the hero unit and three supporting
-          pieces of content. Use it as a starting point to create something more
-          unique.
-        </p>
-        <p>
-          <a class="btn btn-primary btn-large" href="https://www.waqarhabib.dev" target="_blank">Portfolio</a>
-        </p>
-      </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron" style="margin: 3rem; padding: 1rem;">
+      <h2 >Hello, world!</h2>
+      <p>
+        This is a template for a simple marketing or informational website. It
+        includes a large callout called the hero unit and three supporting
+        pieces of content. Use it as a starting point to create something more
+        unique.
+      </p>
+      <p>
+        <a class="btn btn-primary btn-large" href="https://www.waqarhabib.dev" target="_blank">Portfolio</a>
+      </p>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-12">
+<div class="row">
+  <div class="col-11" style="margin: 3rem; padding: 1rem;">
       <form method="POST">
-        <h3 align="center">Sign Up</h3>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="firstName"
-            name="firstName"
-            placeholder="Enter first name"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password1"
-            name="password1"
-            placeholder="Enter password"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password2">Password (Confirm)</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password2"
-            name="password2"
-            placeholder="Confirm password"
-          />
-        </div>
-        <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>  
-    </div>
+          <h3 align="center">Sign Up</h3>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="Enter first name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password1"
+              name="password1"
+              placeholder="Enter password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Password (Confirm)</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password2"
+              name="password2"
+              placeholder="Confirm password"
+            />
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
   </div>
+</div>
 
-  <div class="row">
+<div class="row">
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
-          </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+<!-- Section: Social media -->
+<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <!-- Left -->
+  <div class="me-5 d-none d-lg-block">
+    <span>Get connected with us on social networks:</span>
   </div>
-  <!-- Copyright -->
+  <!-- Left -->
+
+  <!-- Right -->
+  <div>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-google"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <!-- Right -->
+</section>
+<!-- Section: Social media -->
+
+<!-- Section: Links  -->
+<section class="">
+  <div class="container text-center text-md-start mt-5">
+    <!-- Grid row -->
+    <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          <i class="fas fa-gem me-3"></i>Company name
+        </h6>
+        <p>
+          Here you can use rows and columns to organize your footer content. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Products
+        </h6>
+        <p>
+          <a href="#!" class="text-reset">Angular</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">React</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Vue</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Laravel</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Useful links
+        </h6>
+        <p>
+          <a href="#!" class="text-reset">Pricing</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Settings</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Orders</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Help</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope me-3"></i>
+          info@example.com
+        </p>
+        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  © 2021 Copyright:
+  <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+</div>
+<!-- Copyright -->
 </footer>
 <!-- Footer -->
-  </div>
-
 </div>
+
+
 
 {% endblock %}
