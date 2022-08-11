@@ -17,6 +17,23 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        # look for specific user        
+        # query db and filter by all users with the given email. Return first result.
+        user = User.query.filter_by(email=email).first()
+
+        # if user is found, check password is equal to the hash thats stored
+        if user:
+            # access password
+            if check_password_hash(user.password, password):
+                flash('Log in successful!', category='success')
+            else:
+                flash('Try again', category='error')
+        else:
+                flash('Email does not exist.', category='error')
     # boolean attribute can allow if statements in other pages
     return render_template("login.html", boolean=True)
 
@@ -35,11 +52,16 @@ def signup():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
-        regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+        user = User.query.filter_by(email=email).first()
+
 
         # validity checks
+    
+        if user:
+            flash('User already exists.', category='error')
+        
         # flash message if validity check doesnt pass
-        if len(email) < 4:
+        elif len(email) < 4:
             flash('Email must be longer than 4 characters', category='error')
         elif len(first_name) < 2:
             flash('First Name must be longer than 2 characters', category='error')
