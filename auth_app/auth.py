@@ -30,8 +30,9 @@ def login():
             # access password
             if check_password_hash(user.password, password):
                 flash('Log in successful!', category='success')
+                return redirect(url_for('views.home'))
             else:
-                flash('Try again', category='error')
+                flash('Incorrect password', category='error')
         else:
                 flash('Email does not exist.', category='error')
     # boolean attribute can allow if statements in other pages
