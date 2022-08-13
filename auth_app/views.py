@@ -27,6 +27,7 @@ def news():
     desc = []
     news = []
     img = []
+    url = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -34,9 +35,10 @@ def news():
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
     
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
     # reference in home if current user is authenticated
     return render_template ("news.html", user=current_user, context= mylist)
 

@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="row">
-    {% for news, desc, img in context %}
+    {% for news, desc, img, url in context %}
 
     <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem;">
       
@@ -28,10 +28,7 @@
             {{desc}}
           </p>
 
-          <a href="#" class="btn btn-outline-primary btn-sm"> Card link </a>
-          <a href="#" class="btn btn-outline-secondary btn-sm">
-            <i class="far fa-heart"></i
-          ></a>
+          <a href="{{url}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
         </div>
       </div>
     </div>
