@@ -15,10 +15,16 @@
   </div>
 
   <div class="row">
-    <div class="col-11" style="margin: 3rem; height: 42rem; border-style: solid;
+    <div class="col-11" style="margin: 3rem; border-style: solid;
     border-width: 1px; border-color: red;">
+      {% for news, desc, img in context %}
 
-        News content
+      <img src="{{img}}" alt="">
+      <h3>News:</h3> {{news}}
+      <h4>Description:</h4> {{desc}}
+      
+
+      {% endfor %}
 
     </div>
   </div>

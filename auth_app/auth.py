@@ -4,11 +4,40 @@ from .models import User
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 
+
 # secures passwords
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # define "auth.py" as blueprint of app
 auth = Blueprint('auth', __name__)
+
+# #news scraper
+
+# @auth.route('/news')
+# def Index():
+#     newsapi = NewsApiClient(api_key="319d9111dc85440e994aa5cf8341f118")
+#     topheadlines = newsapi.get_top_headlines(sources="al-jazeera-english")   
+
+#     articles = topheadlines['articles']
+
+#     desc = []
+#     news = []
+#     img = []
+
+#     for i in range(len(articles)):
+#         myarticles = articles[i]
+
+#         news.append(myarticles['title'])
+#         desc.append(myarticles['description'])
+#         img.append(myarticles['urlToImage'])
+    
+
+#     mylist = zip(news, desc, img)
+
+#     return render_template('news.html', context= mylist)
+
+
+
 
 # define login, logout, sign up using render_template
 # can pass in variable as a 2nd argument in render_template function, use it in any other page
