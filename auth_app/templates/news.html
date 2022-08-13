@@ -3,7 +3,8 @@
 
 {% block content %} 
 
-<div class="row">
+<div class="main">
+  <div class="row">
     <div class="col-11">
       <div class="jumbotron" style="margin: 3rem; padding: 1rem;">
         <h2 >News Page</h2>
@@ -13,21 +14,33 @@
       </div>
     </div>
   </div>
-
   <div class="row">
-    <div class="col-11" style="margin: 3rem; border-style: solid;
-    border-width: 1px; border-color: red;">
-      {% for news, desc, img in context %}
+    {% for news, desc, img in context %}
 
-      <img src="{{img}}" alt="">
-      <h3>News:</h3> {{news}}
-      <h4>Description:</h4> {{desc}}
+    <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem;">
       
+      <div class="card" style="width: fit-content; padding: 1rem" >
+        <img class="card-img-top" src="{{img}}" alt="" style="height: 500px; width: 550px; padding: 1rem" />
 
-      {% endfor %}
+        <div class="card-body">
+          <h5 class="card-title">{{news}}</h5>
+          <p class="card-text">
+            {{desc}}
+          </p>
 
+          <a href="#" class="btn btn-outline-primary btn-sm"> Card link </a>
+          <a href="#" class="btn btn-outline-secondary btn-sm">
+            <i class="far fa-heart"></i
+          ></a>
+        </div>
+      </div>
     </div>
+    {% endfor %}
   </div>
+
+</div>
+
+</div>
 
   <div class="row">
 <!-- Footer -->
