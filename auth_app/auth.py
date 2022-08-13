@@ -4,40 +4,11 @@ from .models import User
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 
-
 # secures passwords
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # define "auth.py" as blueprint of app
 auth = Blueprint('auth', __name__)
-
-# #news scraper
-
-# @auth.route('/news')
-# def Index():
-#     newsapi = NewsApiClient(api_key="319d9111dc85440e994aa5cf8341f118")
-#     topheadlines = newsapi.get_top_headlines(sources="al-jazeera-english")   
-
-#     articles = topheadlines['articles']
-
-#     desc = []
-#     news = []
-#     img = []
-
-#     for i in range(len(articles)):
-#         myarticles = articles[i]
-
-#         news.append(myarticles['title'])
-#         desc.append(myarticles['description'])
-#         img.append(myarticles['urlToImage'])
-    
-
-#     mylist = zip(news, desc, img)
-
-#     return render_template('news.html', context= mylist)
-
-
-
 
 # define login, logout, sign up using render_template
 # can pass in variable as a 2nd argument in render_template function, use it in any other page
@@ -51,7 +22,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # look for specific user        
+        # look for specific user
         # query db and filter by all users with the given email. Return first result.
         user = User.query.filter_by(email=email).first()
 
@@ -65,7 +36,7 @@ def login():
             else:
                 flash('Incorrect password', category='error')
         else:
-                flash('Email does not exist.', category='error')
+            flash('Email does not exist.', category='error')
     # boolean attribute can allow if statements in other pages
     return render_template("login.html", user=current_user)
 
@@ -89,12 +60,11 @@ def signup():
 
         user = User.query.filter_by(email=email).first()
 
-
         # validity checks
-    
+
         if user:
             flash('User already exists.', category='error')
-        
+
         # flash message if validity check doesnt pass
         elif len(email) < 4:
             flash('Email must be longer than 4 characters', category='error')
