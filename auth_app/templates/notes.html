@@ -1,24 +1,62 @@
 <!-- Extend base template -->
-{% extends "base.html" %} {% block title %}News{% endblock %}
+{% extends "base.html" %} {% block title %}Notes{% endblock %}
 
 {% block content %} 
 
 <div class="row">
     <div class="col-11">
       <div class="jumbotron" style="margin: 3rem; padding: 1rem;">
-        <h2 >News Page</h2>
+        <h2 >Notes Page</h2>
         <p>
-          This is where you can view your top news
+          This is where you can keep a log of important notes regarding news articles
         </p>
       </div>
     </div>
   </div>
-
+<!-- Notes Section-->
   <div class="row">
     <div class="col-11" style="margin: 3rem; height: 42rem; border-style: solid;
     border-width: 1px; border-color: red;">
+      {% for note in user.notes %}
+      <div class="card" id="notes" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">{{note.data}}</p>
+        </div>
+      </div>
+      {% endfor %}
 
-        News content
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Note
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create a Note</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!--ACTUAL NOTES FORM STARTS-->
+      <div class="modal-body">
+        <form method="POST">
+          <textarea name="note" id="note" class="form-control"></textarea>
+        </form>
+      </div>
+      <!--ACTUAL NOTES FORM ENDS-->
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
