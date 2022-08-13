@@ -7,7 +7,13 @@ views = Blueprint('views', __name__)
 
 # define initial route using decorator
 @views.route('/')
-@login_required
 def home():
     # reference in home if current user is authenticated
     return render_template ("home.html", user=current_user)
+
+# define newspage route using decorator
+@views.route('/news')
+@login_required
+def news():
+    # reference in home if current user is authenticated
+    return render_template ("news.html", user=current_user)

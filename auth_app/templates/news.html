@@ -1,67 +1,28 @@
+<!-- Extend base template -->
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+{% block content %} 
+
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-11">
       <div class="jumbotron" style="margin: 3rem; padding: 1rem;">
-        <h2 >Hello, world!</h2>
+        <h2 >News Page</h2>
         <p>
-          This is a template for a simple marketing or informational website. It
-          includes a large callout called the hero unit and three supporting
-          pieces of content. Use it as a starting point to create something more
-          unique.
+          This is where you can view your top news
         </p>
-        <p>
+        <!-- <p>
           <a class="btn btn-primary btn-large" href="https://www.waqarhabib.dev" target="_blank">Portfolio</a>
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12" style="margin: 3rem; padding: 1rem;">
-        <form method="POST">
-            <h3 align="center">Sign Up</h3>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email"
-              />
-            </div>
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="firstName"
-                name="firstName"
-                placeholder="Enter first name"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password1"
-                name="password1"
-                placeholder="Enter password"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password2">Password (Confirm)</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password2"
-                name="password2"
-                placeholder="Confirm password"
-              />
-            </div>
-            <br />
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+    <div class="col-11" style="margin: 3rem; height: 42rem; border-style: solid;
+    border-width: 1px; border-color: red;">
+
+        News content
+
     </div>
   </div>
 
@@ -189,3 +150,5 @@
 </footer>
 <!-- Footer -->
   </div>
+
+{% endblock %}
