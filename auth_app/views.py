@@ -16,7 +16,7 @@ def home():
     return render_template ("home.html", user=current_user)
 
 # define newspage route using decorator
-@views.route('/news')
+@views.route('/aj')
 @login_required
 def news():
     newsapi = NewsApiClient(api_key="319d9111dc85440e994aa5cf8341f118")
@@ -40,7 +40,7 @@ def news():
 
     mylist = zip(news, desc, img, url)
     # reference in home if current user is authenticated
-    return render_template ("news.html", user=current_user, context= mylist)
+    return render_template ("aj.html", user=current_user, context= mylist)
 
 # define notes page route using decorator
 @views.route('/notes', methods=['GET','POST'])

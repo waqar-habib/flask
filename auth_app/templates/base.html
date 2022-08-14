@@ -29,7 +29,7 @@
     <title><!-- Jinja templating --> {% block title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <img
@@ -52,45 +52,49 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <!--IF USER LOGGED IN SHOW ONLY HOME AND LOGOUT-->
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                            <!--IF USER LOGGED IN SHOW ONLY HOME AND LOGOUT-->
             {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="news" href="/news">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="notes" href="/notes">Notes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-            </li>
-            <!-- -->
-            {% else %}
 
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="home" href="/">Home</a>
-            </li>
+                  <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/aj">Al Jazeera</a>
+                        <a class="dropdown-item" href="/verge">The Verge</a>
+                        <a class="dropdown-item" href="/wsj">WSJ</a>
+                        <a class="dropdown-item" href="/techradar">TechRadar</a>
+                        <a class="dropdown-item" href="/reuters">Reuters</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" id="notes" href="/notes">Notes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" id="home" href="/">Home</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-item nav-link disabled" id="home" href="/">News</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" id="signUp" href="/sign-up"
+                      >Sign Up</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                  </li> 
 
-            <li class="nav-item">
-              <a class="nav-item nav-link disabled" id="news" href="/news"
-                >News</a
-              >
-            </li>
+                  {% endif %}
+              </ul>
 
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="signUp" href="/sign-up"
-                >Sign Up</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" id="login" href="/login">Login</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
+          </div>
       </div>
-    </nav>
+  </nav>
 
     <!--Email Validation check-->
 
