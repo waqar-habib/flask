@@ -9,7 +9,7 @@
 }
 
 h2 {
- font-family: Arial, Helvetica, sans-serif;
+ font-family: "Sofia", sans-serif;
     font-size: 5rem !important;
 }
 
@@ -25,3 +25,61 @@ h2 {
 .newsCard {
     border: 5px solid black!important;
 }
+
+.heading {
+    font-size: 75px;
+    font-weight: bold;
+    color:darkblue;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 6rem
+
+}
+
+.subheading {
+    font-size: 50px;
+    color:black;
+    font-family: 'Anton', sans-serif;
+
+}
+
+.loginBtn {
+    text-align: center;
+    padding: 1rem;
+}
+
+.loginButton{
+    font-size: x-large !important;
+    font-weight: bold !important;
+    background-color: darkred !important;
+}
+
+.notesRow {
+    margin-top: 5rem !important;
+}
+
+.notesCard, .addNote {
+    border: 5px solid black!important;
+}
+
+.jumboHeading {
+    float: left !important;
+    width: 50% !important;
+}
+.loginForm {
+    float: right !important;
+    width: 50% !important;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50% !important;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
