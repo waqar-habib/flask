@@ -12,10 +12,14 @@
     <div class="subheading" style="text-align: center;">
       Bringing The World to You.
     </div>
-
+    {% if user.is_authenticated %}
+    <div></div>
+    {% else %}
     <div class="button loginBtn">
       <a class="btn btn-primary btn-large loginButton" href="/login">Login to Read Top Stories</a>
     </div>
+    {% endif %}
+
   </div>
   <!-- </div> -->
 </div>
