@@ -3,25 +3,43 @@
 
 {% block content %} 
 
-<div class="row">
-    <div class="col-11">
-      <div class="jumbotron" style="margin: 3rem; padding: 1rem;">
+<div class="main">
+  <div class="row">
+    <!-- <div class="col-11"> -->
+      <div class="jumbotron" style="padding: 1rem;">
         <h2 >News Page</h2>
         <p>
           This is where you can view your top news
         </p>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
-
   <div class="row">
-    <div class="col-11" style="margin: 3rem; height: 42rem; border-style: solid;
-    border-width: 1px; border-color: red;">
+    {% for news, desc, img, url in context %}
 
-        News content
+    <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem; margin-top: 2rem">
+      
+      <div class="card newsCard" style="width: fit-content; padding: 1rem; height: 45rem;
+      " >
+        <img class="card-img-top" src="{{img}}" alt="" style="height: 500px; width: 550px; padding: 1rem; " />
 
+        <div class="card-body">
+          <h5 class="card-title">{{news}}</h5>
+          <p class="card-text">
+            {{desc}}
+          </p>
+
+          <a href="{{url}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
+
+        </div>
+      </div>
     </div>
+    {% endfor %}
   </div>
+
+</div>
+
+</div>
 
   <div class="row">
 <!-- Footer -->

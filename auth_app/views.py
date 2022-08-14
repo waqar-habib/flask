@@ -3,10 +3,12 @@ from flask_login import login_required, current_user
 from .models import Note
 from .import db
 import json
+from newsapi import NewsApiClient
 
 # define "views.py" as blueprint of app
 views = Blueprint('views', __name__)
 
+#news scraper
 # define initial route using decorator
 @views.route('/')
 def home():
@@ -17,8 +19,28 @@ def home():
 @views.route('/news')
 @login_required
 def news():
+    newsapi = NewsApiClient(api_key="319d9111dc85440e994aa5cf8341f118")
+    topheadlines = newsapi.get_top_headlines(sources="al-jazeera-english")   
+
+    articles = topheadlines['articles']
+
+    desc = []
+    news = []
+    img = []
+    url = []
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
+    
+
+    mylist = zip(news, desc, img, url)
     # reference in home if current user is authenticated
-    return render_template ("news.html", user=current_user)
+    return render_template ("news.html", user=current_user, context= mylist)
 
 # define notes page route using decorator
 @views.route('/notes', methods=['GET','POST'])

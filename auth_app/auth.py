@@ -22,7 +22,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # look for specific user        
+        # look for specific user
         # query db and filter by all users with the given email. Return first result.
         user = User.query.filter_by(email=email).first()
 
@@ -36,7 +36,7 @@ def login():
             else:
                 flash('Incorrect password', category='error')
         else:
-                flash('Email does not exist.', category='error')
+            flash('Email does not exist.', category='error')
     # boolean attribute can allow if statements in other pages
     return render_template("login.html", user=current_user)
 
@@ -60,12 +60,11 @@ def signup():
 
         user = User.query.filter_by(email=email).first()
 
-
         # validity checks
-    
+
         if user:
             flash('User already exists.', category='error')
-        
+
         # flash message if validity check doesnt pass
         elif len(email) < 4:
             flash('Email must be longer than 4 characters', category='error')

@@ -1,43 +1,51 @@
 {% extends "base.html" %} {% block title %}Notes{% endblock %} {% block content
 %}
-<div class="row">
-  <div class="col-11">
-    <div class="jumbotron" style="margin: 3rem; padding: 1rem">
-      <h2>Notes Page</h2>
-      <p>
-        This is where you can keep a log of important notes regarding news
-        articles
-      </p>
+
+<div class="main">
+  <div class="row">
+    <div class="col-11">
+      <div class="jumbotron" style="margin: 3rem; padding: 1rem">
+        <h2>Notes Page</h2>
+        <p>
+          This is where you can keep a log of important notes regarding news
+          articles
+        </p>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-10" style="margin: 4rem">
-    <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
-      <br />
-      <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+  <div class="row">
+    <div class="col-6" style="margin-left: 4rem; ">
+      {% for note in user.notes %}
+      <div
+        class="card"
+        style="margin-bottom: 3rem"
+      >
+        <div class="card-body">
+          <p class="card-text">{{ note.data }}</p>
+          <a href="#" class="btn btn-danger" onClick="deleteNote({{ note.id }})"
+            >Delete</a
+          >
+        </div>
       </div>
-    </form>
-  </div>
-</div>
-<div class="row">
-  <div class="col-10">
-    {% for note in user.notes %}
-    <div
+      {% endfor %}
+    </div>
+    <div class="col-5">
+      <div
       class="card"
-      style="width: 18rem; margin-left: 4rem; margin-bottom: 3rem"
+      style="margin-bottom: 3rem"
     >
       <div class="card-body">
-        <p class="card-text">{{ note.data }}</p>
-        <a href="#" class="btn btn-danger" onClick="deleteNote({{ note.id }})"
-          >Delete</a
-        >
+        <form method="POST">
+          <textarea name="note" id="note" class="form-control"></textarea>
+          <br />
+          <div align="center">
+            <button type="submit" class="btn btn-primary">Add Note</button>
+          </div>
+        </form>
       </div>
     </div>
-    {% endfor %}
+
+    </div>
   </div>
 </div>
 
