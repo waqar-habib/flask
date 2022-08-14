@@ -2,22 +2,23 @@
 %}
 
 <div class="main">
-  <!-- <div class="row">
-    <div class="col-11">
-      <div class="jumbotron" style="margin: 3rem; padding: 1rem">
-        <h2>Notes Page</h2>
-        <p>
-          This is where you can keep a log of important notes regarding news
-          articles
-        </p>
+  <div class="row">
+    <div class="jumbotron">
+      <div class="heading" style="text-align: center;">
+
+        The Morning Sun
+
+      </div>
+      <div class="subheading" style="text-align: center;">
+        Bringing The World to You.
       </div>
     </div>
-  </div> -->
-  <div class="row">
+  </div>
+  <div class="row notesRow">
     <div class="col-6" style="margin-left: 4rem; ">
       {% for note in user.notes %}
       <div
-        class="card"
+        class="card notesCard"
         style="margin-bottom: 3rem"
       >
         <div class="card-body">
@@ -31,7 +32,7 @@
     </div>
     <div class="col-5">
       <div
-      class="card"
+      class="card addNote"
       style="margin-bottom: 3rem"
     >
       <div class="card-body">
