@@ -3,7 +3,6 @@
 
 {% block content %} 
 <div class="row">
-  <!-- <div class="col-11"> -->
   <div class="jumbotron">
     <div class="heading" style="text-align: center;">
 
@@ -13,14 +12,17 @@
     <div class="subheading" style="text-align: center;">
       Bringing The World to You.
     </div>
-
-    <!-- <div class="button loginBtn">
-      <a class="btn btn-primary btn-large loginButton" href="/login">Login to Read Top Stories</a>
-    </div> -->
   </div>
-  <!-- </div> -->
 </div>
 <div class="main">
+  <div class="row">
+    <div class="col-12 logo">
+      <img src="../static/techradar.png" alt="example" class="logo" />
+    </div>
+    <div class="logo">
+      <div class="logoHeading">TechRadar Headlines</div>
+    </div>
+  </div>
   <div class="row">
     {% for newsTR, descTR, imgTR, urlTR in context %}
 

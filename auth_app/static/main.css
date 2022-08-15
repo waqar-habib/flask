@@ -23,7 +23,7 @@ h2 {
 }
 
 .newsCard {
-    border: 5px solid black!important;
+    border: 2px solid grey!important;
 }
 
 .heading {
@@ -81,4 +81,19 @@ h2 {
     content: "";
     display: table;
     clear: both;
+  }
+  .logo { 
+    width: 150px;
+    height: auto;
+    text-align:center;
+  }
+  
+  .logo img {
+    display:inline-block;
+  } 
+
+  .logoHeading {
+    font-size: 35px;
+    color:black;
+    font-family: 'Anton', sans-serif;
   }
