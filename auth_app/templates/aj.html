@@ -22,21 +22,21 @@
 </div>
 <div class="main">
   <div class="row">
-    {% for news, desc, img, url in context %}
+    {% for newsAJ, descAJ, imgAJ, urlAJ in context %}
 
     <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem; margin-top: 2rem">
       
       <div class="card newsCard" style="width: fit-content; padding: 1rem; height: 45rem;
       " >
-        <img class="card-img-top" src="{{img}}" alt="" style="height: 500px; width: 550px; padding: 1rem; " />
+        <img class="card-img-top" src="{{imgAJ}}" alt="" style="height: 500px; width: 550px; padding: 1rem; " />
 
         <div class="card-body">
-          <h5 class="card-title">{{news}}</h5>
+          <h5 class="card-title">{{newsAJ}}</h5>
           <p class="card-text">
-            {{desc}}
+            {{descAJ}}
           </p>
 
-          <a href="{{url}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
+          <a href="{{urlAJ}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
 
         </div>
       </div>
