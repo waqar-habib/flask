@@ -175,7 +175,7 @@ def notes():
     if request.method == 'POST':
         note = request.form.get('note')
         # check for length of note
-        if len(note) < 1:
+        if len(note) < 4:
             flash('Note is too short!', category='error')
         else:
             new_note = Note(data=note, user_id=current_user.id)
@@ -202,4 +202,5 @@ def delete_note():
         if note.user_id == current_user.id:
             db.session.delete(note)
             db.session.commit()
+            flash('Note Deleted!', category='success')
     return jsonify({})
