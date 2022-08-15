@@ -24,21 +24,21 @@ def news():
 
     articles = topheadlines['articles']
 
-    desc = []
-    news = []
-    img = []
-    url = []
+    newsAJ = []
+    descAJ = []
+    imgAJ = []
+    urlAJ = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
 
-        news.append(myarticles['title'])
-        desc.append(myarticles['description'])
-        img.append(myarticles['urlToImage'])
-        url.append(myarticles['url'])
+        newsAJ.append(myarticles['title'])
+        descAJ.append(myarticles['description'])
+        imgAJ.append(myarticles['urlToImage'])
+        urlAJ.append(myarticles['url'])
     
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(newsAJ, descAJ, imgAJ, urlAJ)
     # reference in home if current user is authenticated
     return render_template ("aj.html", user=current_user, context= mylist)
 
