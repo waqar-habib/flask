@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     padding: 3rem !important;
     background-size: cover;
-    height:350px;
+    height:400px;
 }
 
 h2 {
@@ -74,7 +74,6 @@ h2 {
 .column {
     float: left;
     width: 50% !important;
-    padding: 10px;
   }
   
   /* Clear floats after the columns */
