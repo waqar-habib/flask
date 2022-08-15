@@ -1,53 +1,51 @@
-{% extends "base.html" %} {% block title %}Notes{% endblock %} {% block content
-%}
+<!-- Extend base template -->
+{% extends "base.html" %} {% block title %}News{% endblock %}
 
+{% block content %} 
+<div class="row">
+  <!-- <div class="col-11"> -->
+  <div class="jumbotron">
+    <div class="heading" style="text-align: center;">
+
+      The Morning Sun
+
+    </div>
+    <div class="subheading" style="text-align: center;">
+      Bringing The World to You.
+    </div>
+
+    <!-- <div class="button loginBtn">
+      <a class="btn btn-primary btn-large loginButton" href="/login">Login to Read Top Stories</a>
+    </div> -->
+  </div>
+  <!-- </div> -->
+</div>
 <div class="main">
   <div class="row">
-    <div class="jumbotron">
-      <div class="heading" style="text-align: center;">
+    {% for newsTR, descTR, imgTR, urlTR in context %}
 
-        The Morning Sun
+    <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem; margin-top: 2rem">
+      
+      <div class="card newsCard" style="width: fit-content; padding: 1rem; height: 45rem;
+      " >
+        <img class="card-img-top" src="{{imgTR}}" alt="" style="height: 500px; width: 550px; padding: 1rem; " />
 
-      </div>
-      <div class="subheading" style="text-align: center;">
-        Bringing The World to You.
-      </div>
-    </div>
-  </div>
-  <div class="row notesRow">
-    <div class="col-6" style="margin-left: 4rem; ">
-      {% for note in user.notes %}
-      <div
-        class="card notesCard"
-        style="margin-bottom: 3rem"
-      >
         <div class="card-body">
-          <p class="card-text">{{ note.data }}</p>
-          <a href="#" class="btn btn-danger" onClick="deleteNote({{ note.id }})"
-            >Delete</a
-          >
+          <h5 class="card-title">{{newsTR}}</h5>
+          <p class="card-text">
+            {{descTR}}
+          </p>
+
+          <a href="{{urlTR}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
+
         </div>
       </div>
-      {% endfor %}
     </div>
-    <div class="col-5">
-      <div
-      class="card addNote"
-      style="margin-bottom: 3rem"
-    >
-      <div class="card-body">
-        <form method="POST">
-          <textarea name="note" id="note" class="form-control"></textarea>
-          <br />
-          <div align="center">
-            <button type="submit" class="btn btn-primary">Add Note</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    </div>
+    {% endfor %}
   </div>
+
+</div>
+
 </div>
 
 <!-- Footer -->
@@ -106,5 +104,6 @@
   </div>
 </footer>
 <!-- Footer -->
+
 
 {% endblock %}

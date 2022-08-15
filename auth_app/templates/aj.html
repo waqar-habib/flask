@@ -1,52 +1,102 @@
 <!-- Extend base template -->
-{% extends "base.html" %} {% block title %}News{% endblock %}
-
-{% block content %} 
+{% extends "base.html" %} {% block title %}News{% endblock %} {% block content
+%}
 <div class="row">
-  <!-- <div class="col-11"> -->
   <div class="jumbotron">
-    <div class="heading" style="text-align: center;">
-
-      The Morning Sun
-
-    </div>
-    <div class="subheading" style="text-align: center;">
+    <div class="heading" style="text-align: center">The Morning Sun</div>
+    <div class="subheading" style="text-align: center">
       Bringing The World to You.
     </div>
-
-    <!-- <div class="button loginBtn">
-      <a class="btn btn-primary btn-large loginButton" href="/login">Login to Read Top Stories</a>
-    </div> -->
   </div>
-  <!-- </div> -->
+  <div class="main">
+    <div class="row">
+      {% for newsAJ, descAJ, imgAJ, urlAJ in context %}
+
+      <div
+        class="col-lg-5 mb-4 ml-4"
+        style="margin-left: 4rem; margin-top: 2rem"
+      >
+        <div
+          class="card newsCard"
+          style="width: fit-content; padding: 1rem; height: 45rem"
+        >
+          <img
+            class="card-img-top"
+            src="{{imgAJ}}"
+            alt=""
+            style="height: 500px; width: 550px; padding: 1rem"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">{{newsAJ}}</h5>
+            <p class="card-text">{{descAJ}}</p>
+
+            <a href="{{urlAJ}}" class="btn btn-outline-primary btn-sm">
+              Full Story
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
-<div class="main">
-  <div class="row">
-    {% for newsAJ, descAJ, imgAJ, urlAJ in context %}
 
-    <div class="col-lg-5 mb-4 ml-4" style="margin-left:4rem; margin-top: 2rem">
-      
-      <div class="card newsCard" style="width: fit-content; padding: 1rem; height: 45rem;
-      " >
-        <img class="card-img-top" src="{{imgAJ}}" alt="" style="height: 500px; width: 550px; padding: 1rem; " />
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div>
+      <a
+        href="https://www.linkedin.com/in/waqarhabib94/"
+        class="me-4 text-reset"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/waqar-habib/" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </section>
 
-        <div class="card-body">
-          <h5 class="card-title">{{newsAJ}}</h5>
-          <p class="card-text">
-            {{descAJ}}
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>The Morning Sun News
+          </h6>
+          <p>Bringing to you news bulletins from around the world</p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p>
+            <i class="fas fa-home me-3"></i>508 Young Street Dallas, TX 75202
           </p>
-
-          <a href="{{urlAJ}}" class="btn btn-outline-primary btn-sm"> Full Story </a>
-
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@themorningsun.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> 214 234 5678</p>
+          <p><i class="fas fa-print me-3"></i> 214 234 5679</p>
         </div>
       </div>
     </div>
-    {% endfor %}
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://www.waqarhabib.dev"
+      >Waqar Habib</a
+    >
   </div>
-
-</div>
-
-</div>
-
+</footer>
+<!-- Footer -->
 
 {% endblock %}
