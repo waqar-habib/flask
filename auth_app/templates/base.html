@@ -7,9 +7,12 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../static/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap and Fontawesome  -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -52,49 +55,53 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-          <div id="navbarCollapse" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                            <!--IF USER LOGGED IN SHOW ONLY HOME AND LOGOUT-->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!--IF USER LOGGED IN SHOW ONLY HOME AND LOGOUT-->
             {% if user.is_authenticated %}
 
-                  <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="aj">Al Jazeera</a>
-                        <a class="dropdown-item" href="/verge">The Verge</a>
-                        <a class="dropdown-item" href="/wsj">WSJ</a>
-                        <a class="dropdown-item" href="/techradar">TechRadar</a>
-                        <a class="dropdown-item" href="/reuters">Reuters</a>
-                      </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link" id="notes" href="/notes">Notes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-                  </li>
-                  {% else %}
-                  <li class="nav-item">
-                    <a class="nav-item nav-link" id="home" href="/">Home</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-item nav-link disabled" id="home" href="/">News</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-item nav-link" id="signUp" href="/sign-up"
-                      >Sign Up</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                  </li> 
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >News</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="aj">Al Jazeera</a>
+                <a class="dropdown-item" href="/verge">The Verge</a>
+                <a class="dropdown-item" href="/wsj">WSJ</a>
+                <a class="dropdown-item" href="/techradar">TechRadar</a>
+                <a class="dropdown-item" href="/reuters">Reuters</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="notes" href="/notes">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="home" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link disabled" id="home" href="/">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="signUp" href="/sign-up"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            </li>
 
-                  {% endif %}
-              </ul>
-
-          </div>
+            {% endif %}
+          </ul>
+        </div>
       </div>
-  </nav>
+    </nav>
 
     <!--Email Validation check-->
 

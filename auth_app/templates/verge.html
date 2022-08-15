@@ -1,55 +1,47 @@
-{% extends "base.html" %} {% block title %}Notes{% endblock %} {% block content
+<!-- Extend base template -->
+{% extends "base.html" %} {% block title %}News{% endblock %} {% block content
 %}
-
-<div class="main">
-  <div class="row">
-    <div class="jumbotron">
-      <div class="heading" style="text-align: center;">
-
-        The Morning Sun
-
-      </div>
-      <div class="subheading" style="text-align: center;">
-        Bringing The World to You.
-      </div>
+<div class="row">
+  <!-- <div class="col-11"> -->
+  <div class="jumbotron">
+    <div class="heading" style="text-align: center">The Morning Sun</div>
+    <div class="subheading" style="text-align: center">
+      Bringing The World to You.
     </div>
   </div>
-  <div class="row notesRow">
-    <div class="col-6" style="margin-left: 4rem; ">
-      {% for note in user.notes %}
+  <div class="main">
+    <div class="row">
+      {% for newsVerge, descVerge, imgVerge, urlVerge in context %}
+
       <div
-        class="card notesCard"
-        style="margin-bottom: 3rem"
+        class="col-lg-5 mb-4 ml-4"
+        style="margin-left: 4rem; margin-top: 2rem"
       >
-        <div class="card-body">
-          <p class="card-text">{{ note.data }}</p>
-          <a href="#" class="btn btn-danger" onClick="deleteNote({{ note.id }})"
-            >Delete</a
-          >
+        <div
+          class="card newsCard"
+          style="width: fit-content; padding: 1rem; height: 45rem"
+        >
+          <img
+            class="card-img-top"
+            src="{{imgVerge}}"
+            alt=""
+            style="height: 500px; width: 550px; padding: 1rem"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">{{newsVerge}}</h5>
+            <p class="card-text">{{descVerge}}</p>
+
+            <a href="{{urlVerge}}" class="btn btn-outline-primary btn-sm">
+              Full Story
+            </a>
+          </div>
         </div>
       </div>
       {% endfor %}
     </div>
-    <div class="col-5">
-      <div
-      class="card addNote"
-      style="margin-bottom: 3rem"
-    >
-      <div class="card-body">
-        <form method="POST">
-          <textarea name="note" id="note" class="form-control"></textarea>
-          <br />
-          <div align="center">
-            <button type="submit" class="btn btn-primary">Add Note</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    </div>
   </div>
 </div>
-
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
   <section
@@ -82,7 +74,6 @@
         </div>
 
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
           <p>
             <i class="fas fa-home me-3"></i>508 Young Street Dallas, TX 75202
@@ -106,5 +97,4 @@
   </div>
 </footer>
 <!-- Footer -->
-
 {% endblock %}
