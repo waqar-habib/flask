@@ -57,8 +57,16 @@ h2 {
     margin-top: 5rem !important;
 }
 
-.notesCard, .addNote {
+.notesCard {
     border: 1px solid rgb(175, 177, 179)!important;
+    margin-bottom: 3rem;
+}
+
+.addNote {
+    border: 1px solid rgb(175, 177, 179)!important;
+    margin-bottom: 3rem;
+    margin-left: 12rem !important;
+    width: 55%;
 }
 
 .jumboHeading {
