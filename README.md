@@ -35,4 +35,23 @@ To run the application on your local machine, you need to:
 </p>
 
 
+### Code Snippets
 
+#### Classes & Database Models
+
+<p align="center">
+<img src="auth_app/static/classes.png" width="400" height="400">
+</p>
+
+#### APIs
+<p align="center">
+<img src="auth_app/static/APIs.png" width="300" height="200">
+</p>
+
+#### Jinja templates
+
+`{% for newsReuters, descReuters, imgReuters, urlReuters in context %}`
+
+#### CRUD operations
+
+`@auth.route('/sign-up', methods=['GET', 'POST'])`
