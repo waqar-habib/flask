@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}create note{% endblock %} {% block
+    content%}
+
+    
+    <div class="container" style="width: 700px">
+
+      <br />
+      <div class="table-responsive">
+        <div align="right">
+          <button
+            type="button"
+            name="age"
+            id="age"
+            data-toggle="modal"
+            data-target="#add_data_Modal"
+            class="btn btn-warning"
+          >
+            Add
+          </button>
+        </div>
+        <br />
+        <div id="employee_table">
+          <table class="table table-bordered">
+            <tr>
+              <th width="70%">Employee Name</th>
+              <th width="30%">View</th>
+            </tr>
+            <tr>
+                <td>Waqar Habib</td>
+                <td>
+                  <input
+                    type="button"
+                    name="view"
+                    value="view"
+                    id="1"
+                    class="btn btn-info btn-xs view_data"
+                  />
+                </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

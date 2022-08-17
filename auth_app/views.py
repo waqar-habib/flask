@@ -204,3 +204,7 @@ def delete_note():
             db.session.commit()
             flash('Note Deleted!', category='success')
     return jsonify({})
+
+@views.route('/createNote')
+def createNote():
+    return render_template("createNote.html", user=current_user)
