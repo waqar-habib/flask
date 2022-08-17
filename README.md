@@ -25,23 +25,40 @@ To run the application on your local machine, you need to:
 
 ### Screenshots
 
+##### Landing Page
 <p align="center">
 <img src="auth_app/static/home.png"
   width="686" height="289">
 </p>
+</br>
+
+##### Landing Page
+
 <p align="center">
 <img src="auth_app/static/wsj.png"
   width="686" height="289">
 </p>
+</br>
+
+##### Notes Page
 <p align="center">
 <img src="auth_app/static/note.png"
   width="686" height="289">
 </p>
+</br>
+
+##### Login Page
 <p align="center">
 <img src="auth_app/static/login.png"
   width="500" height="150">
 </p>
+</br>
 
+##### Sign up Page
+<p align="center">
+<img src="auth_app/static/sign-up.png"
+  width="600" height="350">
+</p>
 
 ### Code Snippets
 
