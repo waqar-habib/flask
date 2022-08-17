@@ -33,6 +33,14 @@ To run the application on your local machine, you need to:
 <img src="auth_app/static/wsj.png"
   width="686" height="289">
 </p>
+<p align="center">
+<img src="auth_app/static/note.png"
+  width="686" height="289">
+</p>
+<p align="center">
+<img src="auth_app/static/login.png"
+  width="500" height="150">
+</p>
 
 
 ### Code Snippets
