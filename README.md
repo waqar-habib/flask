@@ -22,6 +22,11 @@ To run the application on your local machine, you need to:
 * After that, run `python main.py`
 • Note: You may have to use `python3 main.py` depending on the version of Python you are running on your machine. 
 * Once you see the app execute successfully, navigate to `http://127.0.0.1:5000/`
+* Here, you can test out the application either by:
+• Creating a new account 
+• Logging in with the following credentials:
+`test@test.com`
+`123456`
 
 ### Screenshots
 
